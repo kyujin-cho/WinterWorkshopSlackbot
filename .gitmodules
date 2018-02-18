@@ -1,0 +1,24 @@
+[submodule "BusBot"]
+	path = BusBot
+	url = https://github.com/Jaram2018/bus_bot
+[submodule "CalanderBot"]
+	path = CalanderBot
+	url = https://github.com/Jaram2018/School-Calander
+[submodule "CinemaBot"]
+	path = CinemaBot
+	url = https://github.com/Jaram2018/cinema-bot
+[submodule "CoinoneBot"]
+	path = CoinoneBot
+	url = https://github.com/Jaram2018/coinone-ticker-slackbot
+[submodule "GithubSlackBot"]
+	path = GithubSlackBot
+	url = https://github.com/Jaram2018/WorkshopSlackBot
+[submodule "EbookBot"]
+	path = EbookBot
+	url = https://github.com/Jaram2018/ebookbot
+[submodule "SpellCheckBot"]
+	path = SpellCheckBot
+	url = https://github.com/Jaram2018/chat_bot
+[submodule "TranslateBot"]
+	path = TranslateBot
+	url = https://github.com/Jaram2018/Slackbot-Translator
