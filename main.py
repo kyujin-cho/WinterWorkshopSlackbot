@@ -17,7 +17,7 @@ def on_message(ws, message):
         return # 여기서 다룰 필요가 없으므로 그냥 끝내기
     print(message)
     
-    if message['text'].startswith('!맞춤법 '):
+    if message['text'].startswith('맞춤법:'):
         new_message = message
         new_message['text'] = new_message['text'][4:]
         spell_check_bot.on_message(ws, orig_message)
