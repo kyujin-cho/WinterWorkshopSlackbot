@@ -32,7 +32,7 @@ def on_message(ws, message):
     if translate_bot.translator_check(message['text']):
         translate_bot.on_message(ws, orig_message)
     
-token = os.environ['TOKEN']
+token = os.environ['SLACKBOT_TOKEN']
 get_url = requests.get('https://slack.com/api/rtm.connect?token=' + token) # Slack RTM에 WebSocket 통신 URL을 가져오는 API 요청 보냄
 
 socket_endpoint = get_url.json()['url'] # get_url.json()은 위의 JSON 객체 형태를 지니니까, 여기서 ULR 부분만 뽑아와서 socket_endpoint에 저장
