@@ -1,5 +1,5 @@
---- crawling.py	2018-02-18 16:36:14.000000000 +0900
-+++ crawling_new.py	2018-02-18 16:56:07.000000000 +0900
+--- CinemaBot/crawling.py	2018-02-18 16:36:14.000000000 +0900
++++ CinemaBot/crawling.py	2018-02-18 16:56:07.000000000 +0900
 @@ -4,67 +4,71 @@
  import os
  from bs4 import BeautifulSoup
