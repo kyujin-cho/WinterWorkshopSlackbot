@@ -1,0 +1,40 @@
+--- coinone_new.py	2018-02-18 16:58:39.000000000 +0900
++++ cointickerbot.py	2018-02-18 16:36:07.000000000 +0900
+@@ -4,6 +4,18 @@
+ import json
+ from datetime import datetime
+ 
++currency_term = {
++    'btc': ['비트코인', '빗코', '비코', '비트'],
++    'eth': ['이더', '이더리움'],
++    'bch': ["빗캐", "비트코인캐시", "비캐"], 
++    'etc': ["이클", "이더리움클래식"], 
++    'xrp': ["리플"], 
++    'qtum': ["퀀텀", "큐텀"], 
++    'iota': ["아이오타"], 
++    'ltc': ["라코", "라이트코인"], 
++    'btg': ["빗골", "비트코인골드"] 
++}
++
+ def on_message(ws, message):
+     message = json.loads(message)
+     if 'type' in message.keys() and message['type'] != 'message':
+@@ -12,18 +24,6 @@
+     # 첫 단어가 '코인원'이어야 함
+     if not message['text'].startswith("코인원"):
+         return
+-        
+-    currency_term = {
+-        'btc': ['비트코인', '빗코', '비코', '비트'],
+-        'eth': ['이더', '이더리움'],
+-        'bch': ["빗캐", "비트코인캐시", "비캐"], 
+-        'etc': ["이클", "이더리움클래식"], 
+-        'xrp': ["리플"], 
+-        'qtum': ["퀀텀", "큐텀"], 
+-        'iota': ["아이오타"], 
+-        'ltc': ["라코", "라이트코인"], 
+-        'btg': ["빗골", "비트코인골드"] 
+-    }
+ 
+     currency = message["text"].split()
+     # 이 코드로 '코인원' 만 입력했을 때에는 답하지 않는다.

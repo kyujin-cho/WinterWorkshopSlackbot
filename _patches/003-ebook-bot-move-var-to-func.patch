@@ -1,0 +1,21 @@
+--- ebook.py	2018-02-18 16:35:34.000000000 +0900
++++ ebook_enw.py	2018-02-18 17:00:22.000000000 +0900
+@@ -13,9 +13,8 @@
+ 
+ import random
+ 
+-URL_TPL = "https://www.packtpub.com/packt/offers/free-learning"
+-headers = {'user-agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
+ def get_html(url) :
++    headers = {'user-agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
+     _html = ""
+     resp = requests.get(url, headers=headers)
+     if resp.status_code == 200:
+@@ -42,6 +41,7 @@
+     print(message)
+     if 'type' in message.keys() and message['type'] != 'message':
+         return
++    URL_TPL = "https://www.packtpub.com/packt/offers/free-learning"
+     html = get_html(URL_TPL)
+     ebook = parse_html(html)
+     str_ebook = str(ebook)
