@@ -5,7 +5,8 @@
 3. Execute `EXPORT SLACKBOT_TOKEN=<Token from Slack>` to add SlackBot token to env vars.
 4. Execute `EXPORT PAPAGO_CLIENT_ID=<Naver API Client ID>; EXPORT PAPAGO_CLIENT_SECRET=<Naver API Client Secret>` to add Papago API credentials to env vars.
     1. add lines above to shell rc files if you want to make this vars premanently.
-5. Run `python3 main.py` to start bot.
+5. Apply all the patches in `_patches` folder.
+6. Run `python3 main.py` to start bot.
 
 ## Usage 
 - Movie Schedule: `영화`
