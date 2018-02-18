@@ -30,3 +30,9 @@
 - Translator: `(한영|영한):<Text>`
      - If message is formatted properly, bot will send message which contains translated message of sent text.
      - Example: Sending `한영:안녕하세요` will responded by bot with message `Hello`.
+
+## Deploying on Heroku
+1. Connect [this repository](https://github.com/thy2134/WinterWorkshopSlackbot) to your heroku app.
+2. Execute `heroku config:set -a <Heroku App Name> TOKEN=<Token from Slack>`.
+3. Execute `heroku config:set -a <Heroku App Name> PAPAGO_CLIENT_ID=<Token from Slack>; heroku config:set -a <Heroku App Name> PAPAGO_CLIENT_SECRET=<Token from Slack>`.
+4. Start slack_bot dyno from dashboard.
