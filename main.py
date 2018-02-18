@@ -11,24 +11,26 @@ import json
 import os
 
 def on_message(ws, message):
+    orig_message = message
     message = json.loads(message) # 전달받은 message는 무조건 JSON 형태이므로, 이를 사용하기 쉽게 Python Dict 형식으로 변환 
     if 'type' not in message.keys() or message['type'] != 'message': # 입력받은 메세지가 텍스트가 아닐 경우
         return # 여기서 다룰 필요가 없으므로 그냥 끝내기
+    print(message)
     
     if message['text'].startswith('!맞춤법 '):
         new_message = message
-        new_message['text'] = new_message['text'][5:]
-        spell_check_bot.on_message(ws, message)
+        new_message['text'] = new_message['text'][4:]
+        spell_check_bot.on_message(ws, orig_message)
     if '영화' in message['text']:
-        cinema_bot.on_message(ws, message)
+        cinema_bot.on_message(ws, orig_message)
     if message['text'].startswith('코인원'):
-        coinone_bot.on_message(ws, message)
+        coinone_bot.on_message(ws, orig_message)
     if 'ebook' in message['text'] or 'eBook' in message['text'] or 'e북' in message['text'] or '이북' in message['text'] or 'Ebook' in message['text']:
-        ebook_bot.on_message(ws, message)
+        ebook_bot.on_message(ws, orig_message)
     if message['text'].startswith('!github_register') or message['text'].startswith('!github_unregister'):
-        github_bot.message(ws, message)
+        github_bot.message(ws, orig_message)
     if translate_bot.translator_check(message['text']):
-        translate_bot.on_message(ws, message)
+        translate_bot.on_message(ws, orig_message)
     
 token = os.environ['TOKEN']
 get_url = requests.get('https://slack.com/api/rtm.connect?token=' + token) # Slack RTM에 WebSocket 통신 URL을 가져오는 API 요청 보냄
