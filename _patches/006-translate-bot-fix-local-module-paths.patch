@@ -1,0 +1,13 @@
+--- TranslateBot/connectSlack.py	2018-02-18 18:27:27.000000000 +0900
++++ TranslateBot/connectSlack.py	2018-02-18 18:28:01.000000000 +0900
+@@ -2,8 +2,8 @@
+ import websocket
+ import json
+ 
+-import data as d
+-import translator as t
++from TranslateBot import data as d
++from TranslateBot import translator as t
+ 
+ 
+ def connectSlack():
